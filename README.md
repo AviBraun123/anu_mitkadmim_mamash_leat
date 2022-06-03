@@ -1,49 +1,40 @@
-# CriChæt!
+# CriChæt Server!
 
-WhatApp-like project for Advanced Programming - 2
+Api server for communicate with the DB and a "Rate Us" page
 
 ## Getting Started
 
 ### Libraries required
 
-* react
-* react-router-dom
-* react-bootstrap
 
 ### Installing
 
-* node.js
-* react\
- &emsp; in node.js ->\
- &emsp; navigate to the location you want the react-app to be, with the command "cd 'the_desired_location_path' ->\
- &emsp; enter the command "npx create-react-app 'name_your_app'").
-* react-router-dom\
- &emsp; in node.js [already open at your react-app location] -> enter the command "npm install react-router-dom@6".
-* react-bootstrap\
- &emsp; in node.js [still open at your react-app location] -> enter the command "npm install react-bootstrap bootstrap".
-* clone the project from this git.
 
 ### Executing program
 
-Open "http://localhost:3000/" in your browser, you just get right into our LOG IN screen.\
-If you have already registered you can sign in with your username and password.
+Open "http://localhost:6132/" in your browser, you just get right into our "Rate Us" page.\
+You can see all the comments and reviews that users wrote about our app, and the average grade that users gave.
 
-Otherwise, you can register by clicking the green link in the bottom of the box, it will open in "http://localhost:3000/registration".
+if you want to add new review to the stock, press on the "Add New Review" button, it will send you to the "Create" window.\
+There you have to choose a grade between 1 to 5 with the pluses buttons, add some verbal description of your opinion on our app, and your name/nickname.\
+You can add this comment by confirming your action when clicking on the "Create" button, or get back to the main window and dismiss your review.
 
-In your registration you will be asked for some details for your user:\
-unique username, other users will search you with it\
-STRONG password, includes an uppercase letter, a lowercase letter and a digit. also, there must be at least 8 characters. (after that you will have to verify it so... remember what you wrote)\
-nickname, so the people you talk with will see you as.
+Next to each review there are three buttons:\
+Edit: if you want to edit one of the existing reviews on the stock, press on the orange button, it will send you to the "Edit" window.\
+&emsp; There you can choose a new grade between 1 to 5 with the pluses buttons, edit the verbal description of your opinion on our app,\
+&emsp; and even change your name/nickname.\
+&emsp; You can confirm your changes by click on the "Save" button, or get back to the main window without saving any change.\
+Details: if you want to see the details of an existing review on the stock, press on the grey button, it will send you to the "Details" window.\
+&emsp; There you can see the grade, description, name/nickname of the writer, and when did this review was published.\
+&emsp; You can Edit this comment by click on the "Edit" link, or get back to the main window to see all the comments.\
+Delete: if you want to delete an existing review on the stock, press on the red button, it will send you to the "Delete" window.\
+&emsp; There you can see all the details of this review.\
+&emsp; You can delete this comment by confirming your action, or get back to the main window.\
 
-After you did one of these actions you will move to the chat screen, it will open in "http://localhost:3000//chat?username=...". \
-Thats the main screen of chats of this user.\
-In the left side you can see all the "open chats" you have and the last message that was sent in them, and in the right side you will see some default template.\
-If you click in one of those intros, the whole chat will open in the right side of the screen.\
-now, in the bottom you have input space and a "send" button.\
-On the upper left corner there's a button for adding a new contact, on click a modal with input space will open.\
-To add new contact you need to enter his username (case sensative), the nickname you want him to be appear in the list and the server this user is locate in,\
-then click on the "add" button to complete the action.
-
+There are tons of comments and reviews and you can't find your comment??\
+Press the "Search for a review" button, the search box will appear in the top of the screen.\
+Now you can search any comment by its feedback or the writer's name.\
+If you wish to see all the comments, press the "All reviews" button, it will send you back to the main window.  
 
 ## Authors
 
