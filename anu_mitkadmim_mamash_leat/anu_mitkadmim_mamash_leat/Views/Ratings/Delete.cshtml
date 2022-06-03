@@ -1,0 +1,93 @@
+﻿@model anu_mitkadmim_mamash_leat.Models.Rating
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this rating?</h3>
+<div>
+    <hr />
+    <div class="editBox col-md-4">
+    <dl class="row">
+        <dt class = "col-sm-4">
+            Rate
+        </dt>
+        <dd class = "col-sm-8">
+            @{
+                    switch(@Model.rate.ToString())
+                    {
+                        case "1":
+                            // Use the text block below to separate html elements from code
+                            <span class="starate">.</span>
+                            <span class="starateoff">.</span>
+                            <span class="starateoff">.</span>
+                            <span class="starateoff">.</span>
+                            <span class="starateoff">.</span>
+                            break;
+                        case "2":
+                            <span class="starate">.</span>
+                            <span class="starate">.</span>
+                            <span class="starateoff">.</span>
+                            <span class="starateoff">.</span>
+                            <span class="starateoff">.</span>
+                            break;
+                        case "3":
+                            <span class="starate">.</span>
+                            <span class="starate">.</span>
+                            <span class="starate">.</span>
+                            <span class="starateoff">.</span>
+                            <span class="starateoff">.</span>
+                            break;
+                        case "4":
+                            <span class="starate">.</span>
+                            <span class="starate">.</span>
+                            <span class="starate">.</span>
+                            <span class="starate">.</span>
+                            <span class="starateoff">.</span>
+                            break;
+                        case "5":
+                            <span class="starate">.</span>
+                            <span class="starate">.</span>
+                            <span class="starate">.</span>
+                            <span class="starate">.</span>
+                            <span class="starate">.</span>
+                            break;                   
+                    }
+                }
+        </dd>
+        <dt class = "col-sm-4">
+            Feedback
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.feedback)
+        </dd>
+        <dt class = "col-sm-4">
+            Name
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.name)
+        </dd>
+        <dt class = "col-sm-4">
+            Date
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.date)
+        </dd>
+        <dt class = "col-sm-4">
+            Hour
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.hour)
+        </dd>
+    </dl>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ID" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+    </div>
+    
+    
+</div>

@@ -1,0 +1,92 @@
+﻿@model anu_mitkadmim_mamash_leat.Models.Rating
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <hr />
+    <div class="editBox">
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Rate
+        </dt>
+        <dd class = "col-sm-4">
+           @{
+                    switch(@Model.rate.ToString())
+                    {
+                        case "1":
+                            // Use the text block below to separate html elements from code
+                            <span class="starate">.</span>
+                            <span class="starateoff">.</span>
+                            <span class="starateoff">.</span>
+                            <span class="starateoff">.</span>
+                            <span class="starateoff">.</span>
+                            break;
+                        case "2":
+                            <span class="starate">.</span>
+                            <span class="starate">.</span>
+                            <span class="starateoff">.</span>
+                            <span class="starateoff">.</span>
+                            <span class="starateoff">.</span>
+                            break;
+                        case "3":
+                            <span class="starate">.</span>
+                            <span class="starate">.</span>
+                            <span class="starate">.</span>
+                            <span class="starateoff">.</span>
+                            <span class="starateoff">.</span>
+                            break;
+                        case "4":
+                            <span class="starate">.</span>
+                            <span class="starate">.</span>
+                            <span class="starate">.</span>
+                            <span class="starate">.</span>
+                            <span class="starateoff">.</span>
+                            break;
+                        case "5":
+                            <span class="starate">.</span>
+                            <span class="starate">.</span>
+                            <span class="starate">.</span>
+                            <span class="starate">.</span>
+                            <span class="starate">.</span>
+                            break;                   
+                    }
+                }
+        </dd>
+        <dt class = "col-sm-2">
+            Feedback
+        </dt>
+        <dd class = "col-sm-4">
+            @Html.DisplayFor(model => model.feedback)
+        </dd>
+        <dt class = "col-sm-2">
+            Published on
+        </dt>
+        <dd class = "col-sm-4">
+            @Html.DisplayFor(model => model.date)
+            &nbsp;
+            @Html.DisplayFor(model => model.hour)
+        </dd>
+        <dt class = "col-sm-2">
+            @*@Html.DisplayNameFor(model => model.hour)*@
+        </dt>
+        <dd class = "col-sm-4">
+            @*@Html.DisplayFor(model => model.hour)*@
+        </dd>
+        <dt class = "col-sm-2">
+            Written by
+        </dt>
+        <dd class = "col-sm-4">
+            @Html.DisplayFor(model => model.name)
+        </dd>
+    </dl>
+    <a asp-action="Edit" asp-route-id="@Model?.ID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+    </div>
+</div>
+<div>
+    
+</div>

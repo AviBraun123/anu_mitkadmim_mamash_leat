@@ -1,0 +1,105 @@
+﻿@model IEnumerable<anu_mitkadmim_mamash_leat.Models.Rating>
+
+@{
+    ViewData["Title"] = "Search";
+}
+
+<h1>Rating and Reviews</h1>
+<p>
+    <a asp-action="Index" class="btn btn-success">All Reviews</a>
+</p>
+<p>
+    <a asp-action="Create" class="btn btn-success">Create New</a>
+</p>
+<center>
+    <form asp-action="Search" class="avg col-3 se">
+        <input type="text" id="searchRate" name="query" />
+        <input type="submit" id="searchRate" value="Search"/>
+    </form>
+</center>
+<br/>
+<div class="editBox" id="tablebox">
+<table class="table fixed_header">
+    <thead>
+        <tr>
+            <th>
+                Rate
+            </th>
+            <th>
+               Comment
+            </th>
+            <th>
+                Writer
+            </th>
+            <th colspan="2">
+                Published On
+            </th>
+           @* <th>
+                @Html.DisplayNameFor(model => model.hour)
+            </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td class="col-2">
+                @{
+                    switch(item.rate.ToString())
+                    {
+                        case "1":
+                            // Use the text block below to separate html elements from code
+                                                    <span class="starate">.</span>
+                            break;
+                        case "2":
+                                                    <span class="starate">.</span>
+                                                    <span class="starate">.</span>
+                            break;
+                        case "3":
+                                                    <span class="starate">.</span>
+                                                    <span class="starate">.</span>
+                                                    <span class="starate">.</span>
+                            break;
+                        case "4":
+                                                    <span class="starate">.</span>
+                                                    <span class="starate">.</span>
+                                                    <span class="starate">.</span>
+                                                    <span class="starate">.</span>
+                            break;
+                        case "5":
+                                                    <span class="starate">.</span>
+                                                    <span class="starate">.</span>
+                                                    <span class="starate">.</span>
+                                                    <span class="starate">.</span>
+                                                    <span class="starate">.</span>
+                            break;                   
+                    }
+                }
+                @*@Html.DisplayFor(modelItem => item.rate)*@
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.feedback)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hour)
+            </td>
+            <td style="width:250px;">
+                <a asp-action="Edit" asp-route-id="@item.ID" class="btn btn-warning">Edit</a>
+                <a asp-action="Details" asp-route-id="@item.ID" class="btn btn-secondary">Details</a>
+                <a asp-action="Delete" asp-route-id="@item.ID" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>
+
+@section Scripts{
+    <script src="~/js/searchRate.js"></script>
+}

@@ -1,0 +1,118 @@
+﻿@model IEnumerable<anu_mitkadmim_mamash_leat.Models.Rating>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Rating and Reviews</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">Add New Review</a>
+    <a asp-action="Search" class="btn btn-success">Search for a review</a>
+</p>
+
+<center>
+    <div class="avg col-3">
+        @{
+            float sum = 0;
+            float count = 0;
+            foreach (var item in Model) {
+                sum += item.rate;
+                count++;
+            }
+            float avg = sum/count;
+            string s = avg.ToString("0.00");
+    }
+        Average Rating: @{
+            if(s == "3.14")
+            {
+                <img src="~/Pi-symbol.png" alt="..." class="pi"/>
+            } else if (s == "2.71") { 
+                <img src="~/png_letter_e_50588.png" alt="..." class="pi"/>
+            }else @s
+        }
+    </div>
+</center>
+<br/>
+
+<div class="editBox" id="tablebox">
+<table class="table fixed_header">
+    <thead>
+        <tr>
+            <th>
+                Rate
+            </th>
+            <th>
+               Comment
+            </th>
+            <th>
+                Writer
+            </th>
+            <th colspan="2">
+                Published On
+            </th>
+           @* <th>
+                @Html.DisplayNameFor(model => model.hour)
+            </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td class="col-2">
+                @{
+                    switch(item.rate.ToString())
+                    {
+                        case "1":
+                            // Use the text block below to separate html elements from code
+                                            <span class="starate">.</span>
+                            break;
+                        case "2":
+                                            <span class="starate">.</span>
+                                            <span class="starate">.</span>
+                            break;
+                        case "3":
+                                            <span class="starate">.</span>
+                                            <span class="starate">.</span>
+                                            <span class="starate">.</span>
+                            break;
+                        case "4":
+                                            <span class="starate">.</span>
+                                            <span class="starate">.</span>
+                                            <span class="starate">.</span>
+                                            <span class="starate">.</span>
+                            break;
+                        case "5":
+                                            <span class="starate">.</span>
+                                            <span class="starate">.</span>
+                                            <span class="starate">.</span>
+                                            <span class="starate">.</span>
+                                            <span class="starate">.</span>
+                            break;                   
+                    }
+                }
+                @*@Html.DisplayFor(modelItem => item.rate)*@
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.feedback)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hour)
+            </td>
+            <td style="width:250px;">
+                <a asp-action="Edit" asp-route-id="@item.ID" class="btn btn-warning">Edit</a>
+                <a asp-action="Details" asp-route-id="@item.ID" class="btn btn-secondary">Details</a>
+                <a asp-action="Delete" asp-route-id="@item.ID" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>
