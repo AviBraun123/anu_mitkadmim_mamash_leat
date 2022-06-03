@@ -1,0 +1,216 @@
+html {
+    font-size: 14px;
+    overflow-y: hidden;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+.pi {
+    height: 20px;
+    width: auto;
+}
+
+.rate {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    clip-path: polygon(70% 0, 100% 0, 100% 30%, 30% 100%, 0 100%, 0 70%);
+    background-color: rgb(155, 204, 170);
+    z-index: -40;
+}
+
+.back {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(194, 194, 194);
+    z-index: -50;
+}
+
+.editBox {
+    background-color: rgb(252, 252, 252);
+    padding: 3%;
+    border-radius: 20px;
+}
+
+.fixed_header {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+    .fixed_header tbody {
+        display: block;
+        width: 100%;
+        height: 300px;
+        overflow: auto;
+    }
+
+    .fixed_header thead tr {
+        display: block;
+    }
+
+    .fixed_header th, .fixed_header td {
+        padding: 5px;
+        text-align: left;
+        width: 200px;
+    }
+
+#tablebox {
+    padding: 2%;
+    height: 370px;
+    overflow-y: hidden;
+}
+
+.avg {
+    background-color: rgb(240, 240, 240);
+    padding: 1%;
+    border-radius: 20px;
+}
+
+.starate {
+    display: inline-block;
+    width: 12%;
+    background-color: rgb(59, 143, 56) !important;
+    clip-path: polygon(0 35%, 35% 35%, 35% 0%, 65% 0%, 65% 35%, 100% 35%, 100% 65%, 65% 65%, 65% 100%, 35% 100%, 35% 65%, 0 65%);
+    color: rgb(59, 143, 56) !important;
+}
+
+.starateoff {
+    display: inline-block;
+    width: 12%;
+    background-color: rgb(204, 204, 204) !important;
+    clip-path: polygon(0 35%, 35% 35%, 35% 0%, 65% 0%, 65% 35%, 100% 35%, 100% 65%, 65% 65%, 65% 100%, 35% 100%, 35% 65%, 0 65%);
+    color: rgb(204, 204, 204) !important;
+}
+
+body {
+    font-family: 'Verdana';
+}
+
+.showcase {
+    text-align: center;
+    padding: 15px;
+    /* position: absolute;*/
+    /*top: 50%;
+    left: 50%;*/
+    /*transform: translateY(-50%) translateX(-50%);*/
+}
+
+.rating-system1 {
+    width: auto;
+    display: inline-block;
+    margin: 20px;
+    position: relative;
+}
+
+input {
+    display: none;
+}
+
+#searchRate {
+    display: block;
+}
+
+.se {
+    position: absolute;
+    top: 15%;
+    left: 40%
+}
+
+.plusrate {
+    float: right;
+    display: inline-block;
+    width: 20px;
+    height: 5px;
+    background: #ccc;
+    margin: 4px;
+    position: relative;
+    transition: all .3s;
+}
+
+.rating-system1 label:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    top: 0;
+    left: 0;
+    transition: all 0.3s;
+}
+
+.rating-system1 input:checked ~ label,
+.rating-system1 label:hover ~ label,
+.rating-system1 label:hover {
+    background: seagreen;
+}
+
+    .rating-system1 input:checked ~ label:before {
+        transform: rotate(90deg);
+    }
+
+.text {
+    color: #ccc;
+    padding: 10px 0;
+    position: absolute;
+    width: 100%;
+    top: 100%;
+}
+
+
+/*selecting*/
+input:nth-of-type(5):checked ~ .text:before {
+    content: "Not bad";
+}
+
+label:nth-of-type(5):hover ~ .text:before {
+    content: "Not bad" !important;
+}
+
+input:nth-of-type(4):checked ~ .text:before {
+    content: "Its Ok";
+}
+
+label:nth-of-type(4):hover ~ .text:before {
+    content: "Its Ok" !important;
+}
+
+
+input:nth-of-type(3):checked ~ .text:before {
+    content: "Good!";
+}
+
+label:nth-of-type(3):hover ~ .text:before {
+    content: "Good!" !important;
+}
+
+
+input:nth-of-type(2):checked ~ .text:before {
+    content: "Very Good!";
+}
+
+label:nth-of-type(2):hover ~ .text:before {
+    content: "Very Good!" !important;
+}
+
+input:nth-of-type(1):checked ~ .text:before {
+    content: "Awesome!!";
+}
+
+label:nth-of-type(1):hover ~ .text:before {
+    content: "Awesome!!" !important;
+}
