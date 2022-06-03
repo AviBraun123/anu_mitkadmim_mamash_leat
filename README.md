@@ -26,7 +26,7 @@ WhatApp-like project for Advanced Programming - 2
 ### Executing program
 
 Open "http://localhost:3000/" in your browser, you just get right into our LOG IN screen.\
-If you have already registered you can sign in with your username and password.\
+If you have already registered you can sign in with your username and password.
 
 Otherwise, you can register by clicking the green link in the bottom of the box, it will open in "http://localhost:3000/registration".
 
